@@ -1,0 +1,204 @@
+/* Reset base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: system-ui, sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.primary-title {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  overflow: auto;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 100%; /* padrão: celular */
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.section-bg-primary {
+  background-color: #2e1a47;
+}
+
+.button-primary {
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 30px;
+  padding: 10px;
+  color: #fff;
+}
+
+.button-primary:hover {
+  background-color: rgb(90, 50, 90);
+  transition: all 0.5s ease-in-out;
+}
+
+/* estilos predefinidos para padronização */
+
+/* Variáveis de cores */
+:root {
+  --color-primary: #4f46e5;
+  --color-secondary: #6366f1;
+  --color-background: #f9fafb;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-error: #ef4444;
+  --color-success: #10b981;
+  --border-color-primary: rgb(202, 202, 202);
+}
+
+/* Body e tipografia base */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cabeçalhos */
+h1,
+.h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+h2,
+.h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+/* Parágrafos e textos normais */
+p,
+span,
+label {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+/* Texto menor / secundário */
+small,
+.text-muted {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* Links com cor primária */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+/* Botões */
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--color-secondary);
+}
+
+/* Mensagens de erro */
+.error-text {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+/* Mensagens de sucesso */
+.success-text {
+  color: var(--color-success);
+  font-weight: 600;
+}
