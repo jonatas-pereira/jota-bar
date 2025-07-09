@@ -2,6 +2,9 @@
 import { ref, computed } from 'vue'
 import UserCard from '../components/UserCard.vue'
 import NovaConta from '../components/NovaConta.vue'
+import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
+import Divider from '../components/Divider.vue'
 
 interface Users {
   nome: string
@@ -36,14 +39,16 @@ ordenar()
 </script>
 
 <template>
+  <Header></Header>
   <div class="container p-box">
-    <div>
-      <span class="h1">Contas abertas</span>
+    <div class="c-title">
+      <span class="h2">Contas abertas</span>
     </div>
     <div>
       <div>
         <input v-model="result" type="text" placeholder="Buscar conta" class="c-input" />
       </div>
+      <Divider></Divider>
       <ul class="user-cards">
         <li v-for="user in usersFiltrados" :key="user.id" class="c-item">
           <router-link :to="`contas/${user.id}`">
@@ -62,6 +67,7 @@ ordenar()
     </div>
   </div>
   <NovaConta @atualizar="closeModal" v-if="modal"></NovaConta>
+  <Footer></Footer>
 </template>
 
 <style scoped>
@@ -73,7 +79,11 @@ ordenar()
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px 0px 20px 0px;
+  padding: 0 0px 15px 0px;
+}
+
+.c-title {
+  margin-top: 15px;
 }
 
 .c-box {
@@ -82,19 +92,32 @@ ordenar()
   padding-bottom: 25px;
 }
 
+button {
+  padding: 5px;
+}
+
 .c-item {
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
 .c-input {
   border: 1px solid var(--border-color-primary);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
+  width: 100%;
 }
 
 /* Tablet */
 @media (min-width: 600px) {
+  .c-input {
+    width: 400px;
+  }
+
+  .c-item {
+    width: 80%;
+    margin: auto;
+  }
 }
 
 /* Desktop */

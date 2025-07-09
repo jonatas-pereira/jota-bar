@@ -5,7 +5,8 @@ import Footer from '../components/Footer.vue'
 
 <template>
   <Header></Header>
+  <h1>Tela de relatorios</h1>
   <Footer></Footer>
 </template>
 
-<style scoped></style>
+<style></style>

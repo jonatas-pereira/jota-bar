@@ -148,7 +148,6 @@ span,
 label {
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 1rem;
   color: var(--color-text);
 }
 
@@ -157,7 +156,6 @@ small,
 .text-muted {
   font-size: 0.875rem;
   font-weight: 400;
-  color: var(--color-text-muted);
 }
 
 /* Links com cor primária */
@@ -178,7 +176,6 @@ button {
   background-color: var(--color-primary);
   color: white;
   border: none;
-  padding: 0.6em 1.2em;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 4px;

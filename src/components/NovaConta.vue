@@ -17,13 +17,12 @@ const novaConta = ref<Users>({
 function alterar() {
   emit('atualizar')
 }
-
 </script>
 
 <template>
   <div class="nc-box">
     <div>
-      <input v-on="novaConta.nome" type="text" placeholder="Digite o nome cliente">
+      <input v-on="novaConta.nome" type="text" placeholder="Digite o nome cliente" />
       <button>buscar</button>
     </div>
     <button @click="alterar">Voltar</button>

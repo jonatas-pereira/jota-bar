@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
+import Divider from '../components/Divider.vue'
 import { ref, computed } from 'vue'
 import ProductCard from '../components/productCard.vue'
 
@@ -25,19 +28,66 @@ const produtosDeBar = [
 </script>
 
 <template>
+  <Header></Header>
   <div>
-    <input v-model="elemento" type="text" placeholder="buscar produtos" />
-    <span>{{ elemento }}</span>
-    <ul>
-      <li v-for="item in produtosFiltrados" :key="item.nome">
-        <ProductCard
-          :nome="item.nome"
-          :preco="item.preco"
-          :quantidade="item.quantidade"
-        ></ProductCard>
-      </li>
-    </ul>
+    <div class="container">
+      <div class="title-box">
+        <span class="h2">Produtos</span>
+      </div>
+      <input v-model="elemento" type="text" placeholder="buscar produtos" class="p-input" />
+      <Divider></Divider>
+      <ul class="list-prod">
+        <li v-for="item in produtosFiltrados" :key="item.nome">
+          <ProductCard
+            :nome="item.nome"
+            :preco="item.preco"
+            :quantidade="item.quantidade"
+          ></ProductCard>
+        </li>
+      </ul>
+      <div class="btn-box">
+        <button>Adicionar novo</button>
+      </div>
+    </div>
   </div>
+  <Footer></Footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+.title-box {
+  padding-top: 15px;
+}
+
+.list-prod {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p-input {
+  border: 1px solid var(--border-color-primary);
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn-box {
+  padding: 15px 0 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 5px;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+}
+</style>
